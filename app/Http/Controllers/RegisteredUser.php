@@ -21,8 +21,7 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
-     * @throws ValidationException
-     */
+
     public function store(Request $request): RedirectResponse
     {
         $request->validate([

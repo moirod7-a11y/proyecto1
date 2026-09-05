@@ -21,7 +21,6 @@ class Address_shippingController extends Controller
         return view("address_shippings.index", compact("address_shippings"));
     }
 
- resource.
      
     public function create()
     {
