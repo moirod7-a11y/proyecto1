@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('address__shippings', function (Blueprint $table) {
+        Schema::create('address_shippings', function (Blueprint $table) {
             $table->increments("id");
             $table->decimal("number", 10, 2);
             $table->string("street", 20);
@@ -23,8 +23,8 @@ return new class extends Migration
             $table->integer("customer_id")->unsigned();
             $table->foreign("customer_id")->references("id")->on("customers")->onDelete("cascade")->onUpdate("cascade");
 
-            $table->integer("order_line_id")->unsigned();
-            $table->foreign("order_line_id")->references("id")->on("order_lines")->onDelete("cascade")->onUpdate("cascade");
+          //  $table->integer("order_line_id")->unsigned();
+           // $table->foreign("order_line_id")->references("id")->on("order_lines")->onDelete("cascade")->onUpdate("cascade");
 
 
             $table->timestamps();
