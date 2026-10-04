@@ -22,7 +22,7 @@ class OrderController extends Controller
     public function create()
     {
         $order = new Order();
-        $customers = Customer::all();
+        $customers = Customer::orderBy('name')->get();
         
         $addresses = Address_shipping::all(); 
         

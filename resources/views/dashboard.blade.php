@@ -27,7 +27,7 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-l-4 border-blue-500">
                     <h3 class="text-lg font-bold text-gray-900 mb-2">Artículos</h3>
                     <p class="text-sm text-gray-600 mb-4">Control de productos e inventario por fábrica.</p>
-                   <p class="text-sm text-gray-600 mb-4">Control de productos e inventario por fábrica.</p>
+                  
                     <div class="flex space-x-2">
                         <a href="{{ route('articles.index') }}" class="px-3 py-2 bg-blue-600 text-white text-xs font-semibold rounded hover:bg-blue-700">
                             Ver Listado
@@ -42,10 +42,11 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-l-4 border-green-500">
                     <h3 class="text-lg font-bold text-gray-900 mb-2">Pedidos</h3>
                     <p class="text-sm text-gray-600 mb-4">Registro y seguimiento de órdenes de compra.</p>
-                    <span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">En construcción</span>
-                </div>
-
-            </div>
-        </div>
+                    <a href="{{ route('orders.index') }}" class="px-3 py-2 bg-green-600 text-white text-xs font-semibold rounded hover:bg-green-700">
+            Ver Listado</a>
+        <a href="{{ route('orders.create') }}" class="px-3 py-2 bg-gray-100 text-gray-700 text-xs font-semibold rounded hover:bg-gray-200">
+            + Nuevo
+        </a>
     </div>
+</div>
 </x-app-layout>

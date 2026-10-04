@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('customers', CustomerController::class);
     Route::resource('articles', ArticleController::class);
+    
     Route::resource('factories', FactoryController::class);
 
 Route::resource('address_shippings', Address_shippingController::class);
