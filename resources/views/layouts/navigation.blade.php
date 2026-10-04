@@ -21,6 +21,9 @@
             <x-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.*')">
     {{ __('Clientes') }}
 </x-nav-link>
+<x-nav-link :href="route('articles.index')" :active="request()->routeIs('articles.*')">
+    {{ __('Artículos') }}
+</x-nav-link>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
