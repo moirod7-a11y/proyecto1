@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address_Shipping extends Model
 {
-    protected $table = "address_shipping";
+    protected $table = "address_shippings";
     protected $fillable=[
         "customer_id",
         'order_line_id',
