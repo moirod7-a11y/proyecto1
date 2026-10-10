@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order_line extends Model
 {
-     protected $fillable=[
+    protected $fillable = [
         "article_id",
         "quantity",
         "price",
@@ -16,6 +16,11 @@ class Order_line extends Model
     public function article()
     {
         return $this->belongsTo(Article::class);
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
     }
 
     public function address_shippings()

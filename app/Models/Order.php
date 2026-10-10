@@ -8,16 +8,16 @@ class Order extends Model
 {
  protected $fillable=[
         "customer_id",
-        "id_address_shipping",
+        "address_shipping_id",
         "date_create",
         "subtotal",
         "iva",
         "total_general",
         "additional_notes",
         "state_order"
-    ];
+   ];
 
-    public function customer()
+  public function customer()
     {
         return $this->belongsTo(Customer::class);
     }
