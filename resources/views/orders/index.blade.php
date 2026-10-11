@@ -81,9 +81,9 @@
 
                                     <td class="px-6 py-4">
                                      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                         {{ $order->address_shipping ? $order->address_shipping->street . ', ' . $order->address_shipping->city : 'Sin direccion de envio' }}
+                                         {{ $order->delivery_address ?? 'Sin dirección de envío' }}
                                     </span>
-                                      </td>
+                                 </td>
 
 
                                     <td class="px-6 py-4 text-right">

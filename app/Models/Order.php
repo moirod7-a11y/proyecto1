@@ -9,6 +9,7 @@ class Order extends Model
  protected $fillable=[
         "customer_id",
         "address_shipping_id",
+        "delivery_address",
         "date_create",
         "subtotal",
         "iva",

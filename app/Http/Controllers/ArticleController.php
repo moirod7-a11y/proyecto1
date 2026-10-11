@@ -41,8 +41,16 @@ class ArticleController extends Controller
     }
 
     
-    public function update(ArticleRequest $request, Article $article)
+   // public function update(ArticleRequest $request, Article $article)
+   // {
+       // $article->update($request->validated());
+       // return redirect()->route("articles.index")->with("success", "El artículo se ha actualizado correctamente.");
+  //  }
+
+    public function update(ArticleRequest $request, string $id)
     {
+       
+        $article = Article::findOrFail($id);
         $article->update($request->validated());
         return redirect()->route("articles.index")->with("success", "El artículo se ha actualizado correctamente.");
     }

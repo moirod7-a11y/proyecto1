@@ -86,19 +86,13 @@
                     </div>
 
                     <div class="mb-6">
-                        <label for="address_shipping_id" class="block text-sm font-medium text-gray-700 mb-2">Dirección</label>
-                        <select id="address_shipping_id" name="address_shipping_id" class="w-full rounded-xl border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-20 shadow-sm transition-colors">
-                            <option value="">-- Seleccione una dirección --</option>
-                            @foreach($addresses as $address)
-                                <option value="{{ $address->id }}" {{ old('address_shipping_id') == $address->id ? 'selected' : '' }}>
-                                    {{ $address->street }}, {{ $address->city }}
-                                </option>
-                            @endforeach
-                        </select>
-                        @error('address_shipping_id')
-                            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
+    <label for="delivery_address" class="block text-sm font-medium text-gray-700 mb-2">Dirección de Envío</label>
+    <textarea id="delivery_address" name="delivery_address" rows="3" class="w-full rounded-xl border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Escribe la dirección exacta aquí... (Ej: Del parque 2 cuadras al norte)">{{ old('delivery_address') }}</textarea>
+    
+    @error('delivery_address')
+        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+    @enderror
+</div>
 
                     <div class="flex items-center justify-end gap-4 mt-8 pt-6 border-t border-gray-100">
                         <a href="{{ route('orders.index') }}" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-xl font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150">

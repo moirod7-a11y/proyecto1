@@ -24,7 +24,8 @@ class OrderRequest extends FormRequest
     {
         return [
             'customer_id'=>"required",
-            'address_shipping_id'=>"required",
+            'address_shipping_id'=>"nullable",
+            'delivery_address' => 'required|string|max:255',
             'date_create'=>"date|required",
             'subtotal'=>"required",
             'iva'=>"required",

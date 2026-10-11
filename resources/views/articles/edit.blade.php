@@ -84,8 +84,16 @@
     </div>
 
     <script>
+
+
         function confirmarActualizacion(event) {
             event.preventDefault(); 
+            const form = event.target;
+
+            if(typeof Swal === 'undefined') {
+                form.submit();
+                return;
+            }
             
             Swal.fire({
                 title: '¿Guardar los cambios?',

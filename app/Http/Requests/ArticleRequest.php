@@ -21,16 +21,28 @@ class ArticleRequest extends FormRequest
      * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
-        return [
-            'code_internal'=>"string|required||min:4|max:20",
-            'description'=>"string|required||min:3|max:50",
-            'price'=>"required",
-            'cost'=>"required",
-            'state'=>"string|required||min:3|max:30",
-            'date_record'=>"date|required",
-        ];
-    }
+   // {
+     //   return [
+       //     'code_internal' =>"string|required|min:4|max:20",
+         //   'description'   =>"string|required|min:3|max:200",
+           // 'price'         =>"required",
+            //'cost'          =>"required",
+            //'state'         =>"string|required|min:3|max:30",
+            //'date_record'   =>"date|required",
+        //];
+    //}
+
+    public function rules(): array
+{
+    return [
+        'code_internal' => 'required|string|min:4|max:20',
+        'description'   => 'required|string|min:3|max:100',
+        'price'         => 'required|numeric|min:0',
+        'cost'          => 'required|numeric|min:0',
+        'state'         => 'required|string|min:3|max:30',
+        'date_record'   => 'required|date',
+    ];
+}
 
     public function messages():array
     {
