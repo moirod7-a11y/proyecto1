@@ -14,7 +14,7 @@
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-2xl border border-gray-100 p-8">
                 
-                <form action="{{ route('customers.update', $customer) }}" method="POST" onsubmit="confirmarActualizacion(event)" novalidate>
+                <form id="formUpdate" action="{{ route('customers.update', $customer->id) }}" method="POST" onsubmit="ConfirmarActualizacion(event)" novalidate>
                     @csrf
                     @method('PUT')
                     
@@ -97,7 +97,7 @@
     </div>
 
     <script>
-        function confirmarActualizacion(event) {
+        function ConfirmarActualizacion(event) {
             event.preventDefault(); 
             
             Swal.fire({
@@ -117,6 +117,8 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     event.target.submit(); 
+                    // Seleccionamos el formulario directamente por su ID para que nunca falle
+                    document.getElementById('formUpdate').submit();
                 }
             })
         }

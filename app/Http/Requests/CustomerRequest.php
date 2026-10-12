@@ -22,21 +22,21 @@ class CustomerRequest extends FormRequest
      */
     public function rules(): array
     {
+        // Esto garantiza que obtengamos el ID numérico sin importar qué nos envíe Laravel
+        $cliente = $this->route('customer');
+        $id = is_object($cliente) ? $cliente->id : $cliente;
+
         return [
-            'name'=>'string|required|min:3|max:20',
-            'email'=>'string|required|min:3|max:30|unique:customers,email,' . $this->route('customers'),
-            'telephone'=>'integer|required|unique:customers,telephone,' . $this->route('customers'),
-            'balance'=>'required',
-            'credit_limit'=>'required',
-            'discount'=>'string|required|min:1|max:25',
-            'date_record'=>'date|required',
-            'state_customer'=>'string|required|min:3|max:30',
+            'name'           => 'required|string|min:3|max:50',
+            'email'          => 'required|string|max:50|unique:customers,email,' . $id,
+            'telephone'      => 'required|numeric|unique:customers,telephone,' . $id,
+            'balance'        => 'required|numeric',
+            'credit_limit'   => 'required|numeric',
+            'discount'       => 'required|numeric',
+            'date_record'    => 'required|date',
+            'state_customer' => 'required|string|min:3|max:30',
         ];
     }
-
-    public function messages():array
-
-    {
         return[
 
             'name.string'=>'El nombre solo permite caracteres',
