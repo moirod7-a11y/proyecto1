@@ -37,43 +37,40 @@ class CustomerRequest extends FormRequest
             'state_customer' => 'required|string|min:3|max:30',
         ];
     }
-        return[
 
-            'name.string'=>'El nombre solo permite caracteres',
-            'name.required'=>'El campo es requerido',
-            'name.min'=>'El minimo de caractesres es 3',
-            'name.max'=>'El maximo de caracteres es 20',
+    public function messages(): array
+    {
+        return [
+            'name.string' => 'El nombre solo permite caracteres',
+            'name.required' => 'El campo es requerido',
+            'name.min' => 'El mínimo de caracteres es 3',
+            'name.max' => 'El máximo de caracteres es 20',
 
-            'email.string'=>'El correo solo permite caracteres',
-            'email.required'=>'El campo es requerido',
-            'email.min'=>'El minimo de caractesres es 3',
-            'email.max'=>'El maximo de caracteres es 30',
+            'email.string' => 'El correo solo permite caracteres',
+            'email.required' => 'El campo es requerido',
+            'email.max' => 'El máximo de caracteres es 50',
+            'email.unique' => 'El correo ya está registrado',
 
-            'telephone.integer'=>'El campo solo permite numeros enteros',
-            'telephone.required'=>'El campo es requerido',
-            'telephone.unique'=>'El numero debe ser unico',
+            'telephone.numeric' => 'El campo solo permite números',
+            'telephone.required' => 'El campo es requerido',
+            'telephone.unique' => 'El número debe ser único',
 
-            
-            'balance.required'=>'El balance es requerido',
+            'balance.required' => 'El balance es requerido',
+            'balance.numeric' => 'El balance debe ser numérico',
 
+            'credit_limit.required' => 'El límite de crédito es requerido',
+            'credit_limit.numeric' => 'El límite de crédito debe ser numérico',
 
-            'credit_limit.required'=>'El Límite de crédito es requerido',
+            'discount.required' => 'El campo es requerido',
+            'discount.numeric' => 'El descuento debe ser numérico',
 
-            'discount.string'=>'El campo descuento solo permite caracteres',
-            'discount.required'=>'El campo es requerido',
-            'discount.min'=>'El minimo de caracteres es 1',
-            'discount.max'=>'El maximo de caracteres es 25',
+            'date_record.date' => 'El campo solo permite fecha de ingreso',
+            'date_record.required' => 'El campo es requerido',
 
-            'date_record.date'=>'El campo solo permite fecha de ingreso',
-            'date_record.required'=>'El campo es requerido',
-            'date.date'=>'fecha',
-
-            'state_customer.string'=>'El campo solo permite caracteres',
-            'state_customer.required'=>'El campo es requerido',
-            'state_customer.min'=>'El minimo de caractesres es 3',
-            'state_customer.max'=>'El maximo de caracteres es 30',
-
-            
+            'state_customer.string' => 'El campo solo permite caracteres',
+            'state_customer.required' => 'El campo es requerido',
+            'state_customer.min' => 'El mínimo de caracteres es 3',
+            'state_customer.max' => 'El máximo de caracteres es 30',
         ];
     }
 }
